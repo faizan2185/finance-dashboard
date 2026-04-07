@@ -79,7 +79,7 @@ const Insights = () => {
 
   return (
     <div className="content">
-      <h2 className="page-heading">Insights</h2>
+      <h2 className="page-heading">Insight</h2>
 
       <p>
         <strong>Highest Spending Category:</strong> {highestCategory}
