@@ -1,0 +1,291 @@
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+}
+
+/* ===== APP LAYOUT ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #1e293b;
+  color: white;
+  padding: 12px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ===== SIDEBAR (GMAIL STYLE) ===== */
+.sidebar {
+  width: 220px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* SIDEBAR LINKS */
+.sidebar a {
+  text-decoration: none;
+  color: #cbd5f5;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: #334155;
+}
+
+.sidebar a.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease-in-out;
+}
+
+.cards div {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 120px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ===== TRANSACTIONS ===== */
+.tx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.page-heading {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.page-sub {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #e2e8f0;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: left;
+}
+
+td,
+th {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+  background: #f8fafc;
+}
+
+/* INCOME / EXPENSE COLORS */
+.income {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.expense {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ===== INSIGHTS ===== */
+.insights-header {
+  margin-bottom: 20px;
+}
+
+.insights-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.insights-card h4 {
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+.insights-card p {
+  margin: 0;
+  color: #475569;
+}
+
+/* ===== CHARTS ===== */
+.chart-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.chart-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+/* ===== ACTIVE LINK ===== */
+.active {
+  font-weight: bold;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    z-index: 1000;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .tx-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-container {
+    flex-direction: column;
+  }
+} 
